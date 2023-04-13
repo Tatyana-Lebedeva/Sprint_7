@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: CreateCourierTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 12.215 s <<< FAILURE! - in CreateCourierTest
+createNewCourierAndCheckResponse(CreateCourierTest)  Time elapsed: 0.979 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <500>.
+
+	at CreateCourierTest.createNewCourierAndCheckResponse(CreateCourierTest.java:36)
+
+createCourierCheckResponse(CreateCourierTest)  Time elapsed: 0.641 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <201> but was <500>.
+
+	at CreateCourierTest.createCourierCheckResponse(CreateCourierTest.java:66)
+
