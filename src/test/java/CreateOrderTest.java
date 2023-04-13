@@ -1,3 +1,4 @@
+import Order.Order;
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import org.junit.After;
@@ -5,18 +6,16 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
+import Order.OrderAsserts;
 @RunWith(Parameterized.class)
 public class CreateOrderTest {
     private StepOrder step;
     private OrderAsserts check;
     private String[] color;
     int track;
-
     public CreateOrderTest(String[] color) {
         this.color = color;
     }
-
     @Before
     public void preconditions(){
         step = new StepOrder();
@@ -32,7 +31,6 @@ public class CreateOrderTest {
         };
     }
     @Test
-
     @Step("Create order with different colors")
   public void createTest(){
         Order order= new Order(color);
@@ -44,12 +42,4 @@ public class CreateOrderTest {
     public void deleteOrder(){
      step.cancelOrder(track);
     }
-
-
-
-
-
-
-
-
 }

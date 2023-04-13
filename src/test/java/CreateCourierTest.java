@@ -1,8 +1,6 @@
+import Courier.Courier;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
-import io.restassured.matcher.ResponseAwareMatcher;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -12,7 +10,7 @@ import static org.apache.http.HttpStatus.*;
 import static org.apache.http.client.methods.RequestBuilder.delete;
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class CreateCourierTest {
+public class CreateCourierTest extends BaseTest {
     static private String login = RandomStringUtils.randomAlphabetic(8);
     static private String PEN_CREATE = "/api/v1/courier";
     static private String PEN_LOGIN = "/api/v1/courier/login";
@@ -23,7 +21,7 @@ public class CreateCourierTest {
     @Before
 
     public void setUp(){
-        RestAssured.baseURI = "http://qa-scooter.praktikum-services.ru/";    }
+        openUrl(); }
 
     @Test
     @DisplayName("Создание нового курьера с правильными данными")

@@ -1,3 +1,5 @@
+package Courier;
+
 public class Courier {
     private String firstName;
     private String password;
